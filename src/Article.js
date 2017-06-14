@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import ArticleBody from './ArticleBody'
 import ArticleLinks from './ArticleLinks'
 import ArticleHeading from './ArticleHeading'
+import './Article.css'
 
 class Article extends Component {
     render() {
