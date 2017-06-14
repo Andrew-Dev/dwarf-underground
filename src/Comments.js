@@ -13,8 +13,12 @@ class Comments extends Component {
 
     handleSubmit(event) {
         event.preventDefault()
+        const comment = {
+            timestamp: new Date(),
+            text: this.state.commentValue,
+        }
         this.setState({
-            comments: [...this.state.comments,this.state.commentValue],
+            comments: [...this.state.comments,comment],
             commentValue: '',
         })
     }
@@ -31,9 +35,9 @@ class Comments extends Component {
         return (
             <div>
                 <h4>Comments Section</h4>
-                <form onSubmit={this.handleSubmit.bind(this)} onChange={this.handleChange.bind(this)}>
-                    <textarea value={this.state.commentValue} required />
-                    <input type="submit" value="Submit" />
+                <form onSubmit={this.handleSubmit.bind(this)}>
+                    <textarea value={this.state.commentValue}  onChange={this.handleChange.bind(this)} required />
+                    <input className="button" type="submit" value="Submit" />
                 </form>
                 <br/>
                 {this.state.comments.map(this.renderComment)}

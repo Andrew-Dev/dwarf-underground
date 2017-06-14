@@ -3,7 +3,7 @@ import React, { Component } from 'react';
 class Comment extends Component {
     render() {
         return (
-            <p><strong>Comment: </strong><br/>{this.props.comment}</p>
+            <p><strong>{this.props.comment.timestamp.toString()}: </strong><br/>{this.props.comment.text}</p>
         )
     }
 }
